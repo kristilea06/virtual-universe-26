@@ -1,0 +1,19 @@
+{
+  "name": "diary-stream-app",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node local.js",
+    "dev": "node local.js"
+  },
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.18.0"
+  }
+}

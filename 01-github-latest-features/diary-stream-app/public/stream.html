@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diary Stream</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <a class="stream-home-link" href="/">← Welcome</a>
+          <p class="eyebrow">A Walk to Squiddle aBit with The Dead</p>
+          <h1>Diary Stream</h1>
+        </div>
+        <div class="header-actions">
+          <a
+            class="fund-link"
+            href="https://gofund.me/31ab7ab54"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Support on GoFundMe ↗</a>
+          <a
+            class="fund-link"
+            href="https://www.facebook.com/kristi.lea/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Visit Facebook ↗</a>
+          <a
+            class="fund-link"
+            href="https://www.instagram.com/kristi.lea23/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Visit Instagram ↗</a>
+          <a
+            class="fund-link"
+            href="https://www.snapchat.com/add/kristi.lea000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Visit Snapchat ↗</a>
+          <button id="logoutBtn" class="secondary hidden" type="button">Log out</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section id="privateAccessPanel" class="panel owner-panel">
+          <div class="panel-header">
+            <h2>Private access</h2>
+            <span class="badge owner-badge">Sign in</span>
+          </div>
+
+          <form id="loginForm" class="auth-form">
+            <label>
+              Username
+              <input id="username" name="username" type="text" autocomplete="username" placeholder="myDaddy for Dad" required />
+            </label>
+            <label>
+              Password
+              <input id="password" name="password" type="password" autocomplete="current-password" required />
+            </label>
+            <button type="submit">Log in</button>
+          </form>
+
+          <div id="ownerLocationPanel" class="location-controls hidden">
+            <h3>Share your live location</h3>
+            <p>
+              Your location is sent only while this page is open and sharing is on. Your dad can
+              see the latest point while signed in. You can stop sharing at any time; stale
+              locations expire after two minutes.
+            </p>
+            <div class="location-actions">
+              <button id="startSharingBtn" type="button">Start sharing</button>
+              <button id="stopSharingBtn" class="secondary" type="button" disabled>Stop sharing</button>
+            </div>
+            <p id="locationStatus" class="location-status" role="status" aria-live="polite">
+              Location sharing is off.
+            </p>
+          </div>
+
+          <form id="entryForm" class="entry-form hidden">
+            <label>
+              Entry title
+              <input id="entryTitle" name="title" type="text" maxlength="80" placeholder="What happened today?" required />
+            </label>
+            <label>
+              Diary entry
+              <textarea id="entryContent" name="content" rows="5" maxlength="1200" placeholder="Write your thoughts..." required></textarea>
+            </label>
+            <button type="submit">Post to stream</button>
+          </form>
+
+          <form id="ownerCommunityPostForm" class="entry-form hidden">
+            <h3>Publish a curated community post</h3>
+            <label>
+              Post title
+              <input id="ownerPostTitle" name="title" type="text" maxlength="120" required />
+            </label>
+            <label>
+              Post
+              <textarea id="ownerPostContent" name="content" rows="4" maxlength="2000" required></textarea>
+            </label>
+            <button type="submit">Publish community post</button>
+          </form>
+        </section>
+
+        <section id="dadLocationPanel" class="panel dad-location-panel hidden">
+          <div class="panel-header">
+            <h2>Shared live location</h2>
+            <span class="badge private-badge">Private</span>
+          </div>
+          <p id="dadLocationStatus" class="location-status" role="status" aria-live="polite">
+            Waiting for a location update.
+          </p>
+          <div id="dadLocationDetails" class="location-details hidden"></div>
+        </section>
+
+        <section class="panel feed-panel">
+          <div class="panel-header">
+            <h2>Diary stream</h2>
+            <span class="badge public-badge">Public view</span>
+          </div>
+          <div id="entryList" class="entry-list"></div>
+        </section>
+
+        <section class="panel community-panel">
+          <div class="panel-header">
+            <h2>Spirituality community feed</h2>
+            <span class="badge community-badge">Public posts</span>
+          </div>
+          <p class="participation-note">
+            Share reflections about spirituality, mediumship, and the afterlife. Posts appear
+            publicly right away. Please be respectful, avoid presenting beliefs as proven facts,
+            and do not include private or sensitive personal information.
+          </p>
+          <p id="aiFeedStatus" class="location-status" role="status" aria-live="polite">
+            AI research highlights are not configured.
+          </p>
+          <div id="ownerAiFeedControls" class="owner-ai-feed-controls hidden">
+            <button id="toggleAiFeedBtn" class="secondary" type="button">Pause AI auto-posting</button>
+          </div>
+          <form id="communityPostForm" class="community-post-form">
+            <label>
+              Display name
+              <input id="communityAuthor" name="author" type="text" maxlength="40" required />
+            </label>
+            <label>
+              Your post
+              <textarea id="communityContent" name="content" rows="4" maxlength="1000" required></textarea>
+            </label>
+            <button type="submit">Share with the community</button>
+            <p id="communityPostStatus" class="location-status" role="status" aria-live="polite"></p>
+          </form>
+          <div id="communityPostList" class="community-post-list"></div>
+        </section>
+
+        <section id="participation" class="panel participation-panel">
+          <div class="panel-header">
+            <h2>Participation</h2>
+            <span class="badge community-badge">Join in</span>
+          </div>
+
+          <p class="participation-note">
+            You don’t need a visitor username or password. Comments and participation messages are
+            public. If you’d like to be addressed or contacted, include the name or contact details
+            you’re comfortable sharing publicly. Please don’t post sensitive personal information.
+          </p>
+
+          <form id="participationForm" class="participation-form">
+            <label>
+              Name you’d like us to use
+              <input id="participantName" name="name" type="text" maxlength="40" placeholder="Jane Doe" required />
+            </label>
+
+            <label>
+              How you want to help
+              <select id="participantRole" name="role" required>
+                <option value="">Select an option</option>
+                <option value="Supporter">Supporter</option>
+                <option value="Commenter">Commenter</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Follow along">Follow along</option>
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea id="participantMessage" name="message" rows="3" maxlength="250" placeholder="Tell us how you want to take part..."></textarea>
+            </label>
+
+            <button type="submit">Join the movement</button>
+          </form>
+
+          <div id="participantList" class="participant-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

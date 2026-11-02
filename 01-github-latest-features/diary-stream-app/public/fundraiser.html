@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support the Diary Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #edf5ff 0%, #f9f9ff 100%);
+        color: #33415c;
+      }
+
+      .fund-shell {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 48px 18px 64px;
+      }
+
+      .fund-hero {
+        background: linear-gradient(135deg, #3a5ef7 0%, #7a88ff 100%);
+        color: white;
+        border-radius: 26px;
+        padding: 32px 24px;
+        box-shadow: 0 18px 40px rgba(48, 72, 147, 0.18);
+      }
+
+      .fund-hero h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+      }
+
+      .fund-hero p {
+        margin: 0;
+        max-width: 620px;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .fund-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 24px;
+        margin-top: 26px;
+      }
+
+      .fund-card {
+        background: white;
+        border: 1px solid #dfe8ff;
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 18px 40px rgba(35, 57, 110, 0.08);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+
+      .stat {
+        border: 1px solid #dfe8ff;
+        border-radius: 16px;
+        padding: 16px;
+        background: #f8faff;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.6rem;
+        color: #1e2c4d;
+      }
+
+      .stat span {
+        color: #697a9a;
+      }
+
+      .donate-box {
+        background: #f6f8ff;
+        border: 1px solid #dfe8ff;
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .donate-box h3,
+      .fund-card h3 {
+        margin-top: 0;
+        color: #1e2c4d;
+      }
+
+      .pill-budget {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        background: rgba(79, 110, 247, 0.12);
+        color: #3d59d1;
+        padding: 6px 10px;
+        font-weight: 700;
+        font-size: 0.72rem;
+        margin-bottom: 16px;
+      }
+
+      .donate-button,
+      .ghost-link {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+
+      .donate-button {
+        background: #4f6ef7;
+        color: white;
+      }
+
+      .ghost-link {
+        background: rgba(79, 110, 247, 0.08);
+        color: #3d59d1;
+      }
+
+      ul {
+        padding-left: 18px;
+        line-height: 1.8;
+      }
+
+      .top-link {
+        display: inline-block;
+        margin-top: 18px;
+        color: #3d59d1;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      @media (max-width: 820px) {
+        .fund-grid,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fund-shell">
+      <section class="fund-hero">
+        <div class="pill-budget">Goal: $5,000</div>
+        <h1>Help fund the diary community</h1>
+        <p>
+          We are building a safe place where people can reflect, post updates, and feel supported by a caring community.
+          Your donation helps cover the tools, hosting, and creative work behind this project.
+        </p>
+      </section>
+
+      <div class="fund-grid">
+        <div class="fund-card">
+          <div class="stats">
+            <div class="stat">
+              <strong>$2,420</strong>
+              <span>Raised</span>
+            </div>
+            <div class="stat">
+              <strong>74</strong>
+              <span>Supporters</span>
+            </div>
+            <div class="stat">
+              <strong>48%</strong>
+              <span>of goal</span>
+            </div>
+          </div>
+
+          <h3>Why this matters</h3>
+          <ul>
+            <li>Keep the project running with secure hosting and software tools.</li>
+            <li>Support public storytelling and community reflection.</li>
+            <li>Help build a healthier, more connected online space.</li>
+          </ul>
+        </div>
+
+        <aside class="fund-card">
+          <div class="donate-box">
+            <h3>Donate today</h3>
+            <p>Every contribution helps keep this project available and growing.</p>
+            <a class="donate-button" href="https://gofund.me/31ab7ab54" target="_blank" rel="noopener noreferrer">Donate on GoFundMe</a>
+            <a class="ghost-link" href="/stream">Back to the diary stream</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

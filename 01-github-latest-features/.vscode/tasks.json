@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Diary Stream App",
+			"type": "shell",
+			"command": "/home/vscode/.nvm/versions/node/v20.20.2/bin/node",
+			"args": [
+				"diary-stream-app/server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
